@@ -19,7 +19,13 @@ $(document).ready(function(){
 });
 </script>
 </head>
-	<h1> Welcome to the KPG Work Order System </h1>
+<!-- WELCOME SCREEN -->
+<h1> Welcome to the KPG Work Order System </h1>
+<body>
+	<!-- Ticket Form for basic users to enter a ticket (center of the page) -->
+	<!-- Link for Workers to Login (top right corner) -->
+</body>
+
 <body>
 
 	<?php
@@ -31,8 +37,9 @@ $(document).ready(function(){
 
     <div>
         <select>
+		<!-- Only workers can see/choose these options -->
             <option>Choose Option</option>
-            <option value="Q">query</option>
+            <option value="Q">query..... this is so workers can search for ticket</option>
             <option value="A">add.....this is a link and logic is here</option>
             <option value="R">remove.....This option is for sys_admins</option>
            
