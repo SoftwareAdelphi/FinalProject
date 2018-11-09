@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Product Order Search</title>
+<title>Help Desk Queue</title>
 </head>
 
 <body>
