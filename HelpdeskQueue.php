@@ -32,14 +32,14 @@ $i=1;
 echo "<PRE>";
 if (array_key_exists("number", $_REQUEST)) {
 	//begin parameterized query ? is placeholder
-	$st = $dbh->prepare("SELECT * FROM order_view WHERE orderid=?");
+	$st = $dbh->prepare("SELECT * FROM ___ WHERE ____ =?");
 
 	//map each ? to a variable
 	$st->bindParam(1, $_REQUEST['number']);
 
 //        $number = $_REQUEST['number'];
 } else {
-	$st = $dbh->prepare("SELECT * FROM order_view");
+	$st = $dbh->prepare("SELECT * FROM _____ ");
 //        $number = '';
 }
 
