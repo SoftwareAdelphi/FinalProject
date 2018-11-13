@@ -51,8 +51,11 @@ print "<pre>
 
 Ticket ID	Issue Title	Description	Contact First Name	Last Name	Telephone	Email	Status Asignees
 
+#<form>
+#<input type = "radio" name = "Assignees" value = "Endpoint">Endpoint<br>
+#<input type = "radio" name = "Assignees" value = "Sys Admins">Sys Admins <br>
+#</form> 
 <?php
-#$res = $dbh->query($q, PDO::FETCH_ASSOC);
 while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
 	foreach ($row as $key=>$value) {
 		print "$value\t";
