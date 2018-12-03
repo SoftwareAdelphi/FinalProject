@@ -8,7 +8,7 @@
 <form action="EndpointQueue.php" method="post">
 <table>
         <tr>
-                <td>Enter an order number:</td>
+                <td>Enter a ticket number:</td>
                 <td><input type="text" size="10" name="number"/></td>
         </tr>
 </table>
@@ -18,49 +18,65 @@
 <?php
 
 //open connection
-try {
+        $host = "localhost";
+        $user = "proggadeb";
+        $pw = "";
+        $database = "proggadeb";
 
-        $dbh = new PDO('pgsql:dbname= kaylapollock');
+        $dbh = new mysqli($host, $user, $pw, $database);
+        if ($dbh->connect_errno) {
+                echo "Connect failed: ". $dbh->connect_error;
+                exit();
+	}
 
-} catch (PDOException $e) {
-        print "Error: ".$e->getMessage()."<br/>";
-        die();
-}
 
 //store value
 $i=1;
 echo "<PRE>";
 if (array_key_exists("number", $_REQUEST)) {
 	//begin parameterized query ? is placeholder
-	$st = $dbh->prepare("SELECT * FROM ___ WHERE ____ =?");
+	$st = $dbh->prepare("SELECT * FROM Tckets WHERE number =?");
 
 	//map each ? to a variable
-	$st->bindParam(1, $_REQUEST['number']);
+//	$st->bindParam(1, $_REQUEST['number']);
 
 //        $number = $_REQUEST['number'];
 } else {
-	$st = $dbh->prepare("SELECT * FROM _____ ");
+	$st = $dbh->prepare("SELECT * FROM Tickets");
 //        $number = '';
 }
 
 //execute query
-$res = $st->execute();
+//$res = $st->execute();
 print "<pre>
 ";
 ?>
 
-Ticket ID	Issue Title	Description	Contact First Name	Last Name	Telephone	Email	Status Asignees
 
 <?php
-#$res = $dbh->query($q, PDO::FETCH_ASSOC);
-while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-	foreach ($row as $key=>$value) {
-		print "$value\t";
+
+$sql = "SELECT * FROM `Tickets`;";
+        $result = $dbh->query($sql);
+        if(!$result){
+//                echo "Bummer! " . $dbh->error;
+        }
+        else{
+//                echo "<br>The result has " . $result->num_rows. " rows.";
+
+        //two methods
+        $table = $result->fetch_all();
+        //var_dump($table);
+echo "<table border = '1'>";
+        foreach($table as $row){
+                echo "<tr>";
+                foreach($row as $value){
+                        echo "<td>$value</td>";
+                }
+                echo "</tr>";
+		}
 	}
-	print "\n";
-}
-$dbh = null;
 ?>
 
 </body>
 </html>
+
