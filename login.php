@@ -19,15 +19,18 @@
 		$row = mysqli_fetch_row($role);
 		if ($row[0] == 'Helpdesk') 
 		{
-			header("location:HelpdeskQueue.php");
+//			header("location:HelpdeskQueue.php");
+			echo "<script> location.href='HelpdeskQueue.php'; </script>";
 		}
 		else if ($row[0] == 'Sysadmin')
 		{
-			header("location:SysAdminQueue.php");
+//			header("location:SysAdminQueue.php");
+			echo "<script> location.href='SysAdminQueue.php'; </script>";
 		}
 		else if ($row[0] == 'Endpoint');
 		{
-			header("location:EndpointQueue.php");
+//			header("location:EndpointQueue.php");
+			echo "<script> location.href='EndpointQueue.php'; </script>";
 		}
 //		else
 //		{ echo "This should never display!"; }
