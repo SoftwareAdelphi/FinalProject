@@ -14,33 +14,32 @@
   </form>
 </div>
 </body>
-</html>
 <?php
+include ("connection.php");
 //double checks to see if everything is filled in
 //query from 
 if( (!isset($_POST['fnameadd']) || trim($_POST['fnameadd']) == "") || 
 (!isset($_POST['lnameadd']) || trim($_POST['lnameadd']) == '') || 
 (!isset($_POST['issue_Title']) || trim($_POST['issue_Title']) == '') ||
 (!isset($_POST['telephone']) || trim($_POST['telephone']) == '') ||
-(!isset($_POST['description']) || trim($_POST['description']) == '')
+(!isset($_POST['description']) || trim($_POST['description']) == ''))
 {
    echo "You did not fill out the required fields.";
 
 } else {
-	$time = int time ( void ) //grabs timestamp
 	$sql = "INSERT INTO //table (firstname, lastname, issue, description, time, status, assignee ) //all the table column names has to be in order of columns and such should be correct
-VALUES ('$_POST[fnameadd]', '$_POST[lnameadd]','$_POST[issue_Title]', '$_POST[description]', '$time', 'open', 'Helpdesk')"; //doubleCheck this
+VALUES ('$_POST[fnameadd]', '$_POST[lnameadd]','$_POST[issue_Title]', '$_POST[description]', current_timestamp(), 'open', 'Helpdesk')"; //doubleCheck this
 }
 
 //Sees if this works out correctly and actually inserted
-if ($dbh->query($sql) === TRUE) {
+if ($db->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $dbh->error;
+    echo "Error: " . $sql . "<br>" . $db->error;
 }
-$dbh->close();
+$db->close();
+?>
 <br>
 <input type="button" onclick="location.href='TicketSystemForms.html';" value="Go Back to Menu" />
 </body>
 </html>
-?>
