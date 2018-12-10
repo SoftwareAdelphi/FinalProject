@@ -43,6 +43,6 @@ if ($db->query($sql) === TRUE) {
 $db->close();
 ?>
 <br>
-<input type="button" onclick="location.href='TicketSystemForms.html';" value="Go Back to Menu" />
+<input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
 </body>
 </html>
