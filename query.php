@@ -10,7 +10,7 @@
                       <input type="submit">
                     </form>
                 </div>
-
+<input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
 </body>
 </html>
 
