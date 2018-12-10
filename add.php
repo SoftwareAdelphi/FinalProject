@@ -27,7 +27,7 @@ if( (!isset($_POST['fnameadd']) || trim($_POST['fnameadd']) == "") ||
 (!isset($_POST['username']) || trim($_POST['username']) == '') ||
 (!isset($_POST['email']) || trim($_POST['email']) == ''))
 {
-   echo "You did not fill out the required fields.";
+   echo "Please fill out all fields.";
 
 } else {
 	$sql = "INSERT INTO Tickets(fname, lname, title, description, phonenumber, email, username, date, status, assignee) 
