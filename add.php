@@ -8,7 +8,8 @@
   Issue Title:    <input type="text" name="issue_Title" /><br>
   Description:  <input type="text" name="description" /><br>
   Telephone Number:          <input type="text" name="telephone" /><br>
-  Email:        <input type="text" name="countyadd" /><br>
+  Email:        <input type="text" name="email" /><br>
+  Username:	<input type ="text" name ="username" /><br>
   <!-- Helpdesk is auto assigned. Date/status is auto generated. Issue number is also auto generated-->
   <input type="submit">
   </form>
@@ -22,13 +23,15 @@ if( (!isset($_POST['fnameadd']) || trim($_POST['fnameadd']) == "") ||
 (!isset($_POST['lnameadd']) || trim($_POST['lnameadd']) == '') || 
 (!isset($_POST['issue_Title']) || trim($_POST['issue_Title']) == '') ||
 (!isset($_POST['telephone']) || trim($_POST['telephone']) == '') ||
-(!isset($_POST['description']) || trim($_POST['description']) == ''))
+(!isset($_POST['description']) || trim($_POST['description']) == '') ||
+(!isset($_POST['username']) || trim($_POST['username']) == '') ||
+(!isset($_POST['email']) || trim($_POST['email']) == ''))
 {
    echo "You did not fill out the required fields.";
 
 } else {
-	$sql = "INSERT INTO //table (firstname, lastname, issue, description, time, status, assignee ) //all the table column names has to be in order of columns and such should be correct
-VALUES ('$_POST[fnameadd]', '$_POST[lnameadd]','$_POST[issue_Title]', '$_POST[description]', current_timestamp(), 'open', 'Helpdesk')"; //doubleCheck this
+	$sql = "INSERT INTO Tickets(fname, lname, title, description, phonenumber, email, username, date, status, assignee) 
+VALUES ('$_POST[fnameadd]', '$_POST[lnameadd]','$_POST[issue_Title]', '$_POST[description]', '$_POST[telephone]', '$_POST[email]', '$_POST[username]', current_timestamp(), 'open', 'Helpdesk')"; //doubleCheck this
 }
 
 //Sees if this works out correctly and actually inserted
