@@ -1,7 +1,7 @@
 <html lang = "en">
 <body>
 <div class="A option">
-<h2>Please fill out every field</h2>
+<h2>New Issue Form</h2>
   <form name="add" action="" method="POST">
   First Name:    <input type="text" name="fnameadd" /><br>
   Last Name:     <input type="text" name="lnameadd" /><br>
@@ -27,7 +27,7 @@ if( (!isset($_POST['fnameadd']) || trim($_POST['fnameadd']) == "") ||
 (!isset($_POST['username']) || trim($_POST['username']) == '') ||
 (!isset($_POST['email']) || trim($_POST['email']) == ''))
 {
-   echo "Please fill out all fields.";
+   echo "Please fill out every field.";
 
 } else {
 	$sql = "INSERT INTO Tickets(fname, lname, title, description, phonenumber, email, username, date, status, assignee) 
