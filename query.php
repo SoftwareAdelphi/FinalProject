@@ -1,7 +1,7 @@
 <html lang = "en">
 <body>
 <div class="Q option"> <!--Helpdesk doesnt' have this function. SysAdmins and endpoint can though-->
-                  <h2>Enter info for the ticket you are looking for</h2>
+                  <h2>Enter the ID of the ticket you are looking for</h2>
 
                     <form name="query" action="" method="POST">
                 <!-- the name is the section of the database that it is finding -->
