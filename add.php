@@ -7,7 +7,7 @@
   Last Name:     <input type="text" name="lnameadd" /><br>
   Issue Title:    <input type="text" name="issue_Title" /><br>
   Description:  <input type="text" name="description" /><br>
-  Telephone Number:          <input type="text" name="telephone" /><br>
+  Phone Number:          <input type="text" name="telephone" /><br>
   Email:        <input type="text" name="email" /><br>
   Username:	<input type ="text" name ="username" /><br>
   <!-- Helpdesk is auto assigned. Date/status is auto generated. Issue number is also auto generated-->
@@ -17,6 +17,7 @@
 </body>
 <?php
 include ("connection.php");
+$sql = NULL;
 //double checks to see if everything is filled in
 //query from 
 if( (!isset($_POST['fnameadd']) || trim($_POST['fnameadd']) == "") || 
@@ -35,14 +36,15 @@ VALUES ('$_POST[fnameadd]', '$_POST[lnameadd]','$_POST[issue_Title]', '$_POST[de
 }
 
 //Sees if this works out correctly and actually inserted
-if ($db->query($sql) === TRUE) {
+if ($sql == NULL){}
+elseif ($db->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $db->error;
 }
 $db->close();
 ?>
-<br>
+<br><br>
 <input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
 </body>
 </html>
