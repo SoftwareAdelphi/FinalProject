@@ -1,68 +1,31 @@
 <html>
 <head>
 <title>Help Desk Queue</title>
-</head>
-
-<body>
-<h1>Help Desk Tickets:</h1>
-<form action="HelpdeskQueue.php" method="post">
-<table>
-        <tr>
-                <td>Enter an order number:</td>
-                <td><input type="text" size="10" name="number"/></td>
-        </tr>
-</table>
-<p><input type="submit"></p>
-</form>
-
+<center><h1> HELP DESK QUEUE</h1><br><br>
 <?php
-
 //open connection
-try {
+include ("connection.php");
 
-        $dbh = new PDO('pgsql:dbname= kaylapollock');
+	$sql = "SELECT number, title, description, status, assignee, date FROM Tickets WHERE assignee = 'Helpdesk' ORDER BY date";
+	$result = mysqli_query($db, $sql);
 
-} catch (PDOException $e) {
-        print "Error: ".$e->getMessage()."<br/>";
-        die();
-}
-
-//store value
-$i=1;
-echo "<PRE>";
-if (array_key_exists("number", $_REQUEST)) {
-	//begin parameterized query ? is placeholder
-	$st = $dbh->prepare("SELECT * FROM ___ WHERE ____ =?");
-
-	//map each ? to a variable
-	$st->bindParam(1, $_REQUEST['number']);
-
-//        $number = $_REQUEST['number'];
-} else {
-	$st = $dbh->prepare("SELECT * FROM _____ ");
-//        $number = '';
-}
-
-//execute query
-$res = $st->execute();
-print "<pre>
-";
-?>
-
-Ticket ID	Issue Title	Description	Contact First Name	Last Name	Telephone	Email	Status Asignees
-
-#<form>
-#<input type = "radio" name = "Assignees" value = "Endpoint">Endpoint<br>
-#<input type = "radio" name = "Assignees" value = "Sys Admins">Sys Admins <br>
-#</form> 
-<?php
-while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-	foreach ($row as $key=>$value) {
-		print "$value\t";
+	if (!$result){
+        echo "Oops! " . $db->error;
+      }
+      else{
+                $table = $result->fetch_all();
+        //var_dump($table);
+        echo "<table border = '1'>";
+        echo "<tr><th>Ticket #</th><th>Title</th><th>Description</th><th>Status</th><th>Assignees</th><th>Date Created</th></tr>";
+        foreach($table as $row){
+                echo "<tr>";
+                foreach($row as $value){
+                        echo "<td>$value</td>";
+                }
+                echo "</tr>";
+        }
 	}
-	print "\n";
-}
-$dbh = null;
+
 ?>
 
 </body>
