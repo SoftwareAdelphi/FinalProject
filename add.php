@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>DBMS</title>
+    <title>Add Issue</title>
 
     <meta name="author" content="GB">
 
