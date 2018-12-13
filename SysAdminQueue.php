@@ -1,67 +1,34 @@
 <html>
 <head>
 <title>System Administrator Queue</title>
-</head>
-
-
-<body>
-<h1>System Administrator Tickets:</h1>
-<form action="SysAdminQueue.php" method="post">
-<table>
-        <tr>
-                <td>Enter an order number:</td>
-                <td><input type="text" size="10" name="number"/></td>
-        </tr>
-</table>
-<p><input type="submit"></p>
-</form>
-
+<center><h1> SYS ADMIN QUEUE</h1><br><br>
 <?php
-
 //open connection
-try {
+include ("connection.php");
 
-        $dbh = new PDO('pgsql:dbname= kaylapollock');
+	$sql = "SELECT number, title, description, status, assignee, date FROM Tickets WHERE assignee = ’SysAdmin' ORDER BY date";
+	$result = mysqli_query($db, $sql);
 
-} catch (PDOException $e) {
-        print "Error: ".$e->getMessage()."<br/>";
-        die();
-}
-
-//store value
-$i=1;
-echo "<PRE>";
-if (array_key_exists("number", $_REQUEST)) {
-	//begin parameterized query ? is placeholder
-	$st = $dbh->prepare("SELECT * FROM ___ WHERE asignee = sysadmin");
-
-	//map each ? to a variable
-	$st->bindParam(1, $_REQUEST['number']);
-
-//        $number = $_REQUEST['number'];
-} else {
-	$st = $dbh->prepare("SELECT * FROM ___");
-//        $number = '';
-}
-
-//execute query
-$res = $st->execute();
-print "<pre>
-";
-?>
-
-Ticket ID	Issue Title	Description	Contact First Name	Last Name	Telephone	Email	Status Asignees
-
-<?php
-#$res = $dbh->query($q, PDO::FETCH_ASSOC);
-while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-	foreach ($row as $key=>$value) {
-		print "$value\t";
+	if (!$result){
+        echo "Oops! " . $db->error;
+      }
+      else{
+                $table = $result->fetch_all();
+        //var_dump($table);
+        echo "<table border = '1'>";
+        echo "<tr><th>Ticket #</th><th>Title</th><th>Description</th><th>Status</th><th>Assignees</th><th>Date Created</th></tr>";
+        foreach($table as $row){
+                echo "<tr>";
+                foreach($row as $value){
+                        echo "<td>$value</td>";
+                }
+                echo "</tr>";
+        }
 	}
-	print "\n";
-}
-$dbh = null;
+
 ?>
+
+<input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
 
 </body>
 </html>
