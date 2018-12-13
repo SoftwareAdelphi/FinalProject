@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Help Desk Queue</title>
-<center><h1> HELP DESK QUEUE</h1><br><br>
+<center><h1> HELP DESK QUEUE</h1><br>
 <?php
 //open connection
 include ("connection.php");
@@ -27,6 +27,8 @@ include ("connection.php");
 	}
 
 ?>
+
+<input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
 
 </body>
 </html>
