@@ -1,5 +1,4 @@
 # SoftwareFinalProject
-This is the final project for our Software engineering class  
 
 Project: Ticket System
 Gerard Boniello, Kayla Pollock & Progga Deb
