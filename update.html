@@ -1,0 +1,39 @@
+<html lang = "en">
+<body>
+<div class="A option">
+<h2>Update Issue Form</h2>
+  <form name="add" action="" method="POST">
+  Ticket ID    <input type="text" name="ticket" /><br>
+  Description:  <input type="text" name="description" /><br>
+
+  <input type="submit">
+  </form>
+</div>
+</body>
+Please fill out every field.<br><br>
+<input type="button" onclick="location.href='test.php';" value="Go Back to Menu" />
+</body>
+</html>
+
+<?php
+include ("connection.php");
+$sql = NULL;
+//double checks to see if everything is filled in
+//query from 
+if( (!isset($_POST['ticket']) || trim($_POST['ticket']) == "") || 
+(!isset($_POST['description']) || trim($_POST['description']) == ''))
+{
+   echo "Please fill out every field.";
+} else {
+	$sql = "INSERT INTO Tickets(description) WHERE ticket = $_POST['ticket']"
+VALUES ('$_POST[description]')"; 
+}
+//Sees if this works out correctly and actually inserted
+if ($sql == NULL){}
+elseif ($db->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $db->error;
+}
+$db->close();
+?>
