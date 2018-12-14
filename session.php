@@ -11,6 +11,6 @@
 
         // If username input incorrect, redirect back to login page
         if (!isset($_SESSION['login_user']))
-        { echo "<script> location.href='index.html'; </script>"; }
+        { echo "<script> location.href='login.html'; </script>"; }
 
 ?>
