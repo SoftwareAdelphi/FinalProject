@@ -21,7 +21,7 @@
      <li> <a href = "Logout.php"> Logout </a> </li>
 </ul>
 
-<br><br><center><table class="IncidentsTable">
+<br><br><center><table class="TicketsTable">
   <tr class="TableHeader">
     <th id="headerItem"><center>Ticket ID</center></th>
     <th id="headerItem"><center>Title</center></th>

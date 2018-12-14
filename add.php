@@ -2,7 +2,16 @@
 <body>
 <div class="A option">
 <title>Add Issue </title>
-<h2>New Issue Form</h2>
+ <link rel="stylesheet" type ="text/css" href="Homepage.css"/>
+<h1> KPG WORK ORDER SYSTEM </h1>
+<ul>
+     <li> <a href= "home.php"> Home </a> </li>
+     <li> <a class = "current"  href = "add.php"> Add Issues </a> </li>
+     <li> <a href = "query.php"> Query Issues </a> </li>
+     <li> <a href = "login.html"> Worker Login </a> </li>
+</ul>
+<br><br>
+<h3>New Issue Form</h3>
   <form name="add" action="" method="POST">
   First Name:    <input type="text" name="fnameadd" /><br>
   Last Name:     <input type="text" name="lnameadd" /><br>
