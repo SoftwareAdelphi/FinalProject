@@ -12,18 +12,48 @@
 </body>
 
 <?php
+
+
+$ticketID = $_POST['ticket'];
+$message =$_POST['description'];
+
 include ("connection.php");
 $sql = NULL;
-//double checks to see if everything is filled in
-//query from 
-if( (!isset($_POST['ticket']) || trim($_POST['ticket']) == "") || 
-(!isset($_POST['description']) || trim($_POST['description']) == ''))
-{
-   echo "Please fill out every field.";
+
+$query = "SELECT * FROM Tickets WHERE `ticketno` = '$ticketID'";
+$sqlsearch = mysql_query($query);
+$resultcount = mysql_numrows($sqlsearch);
+
+mysql_query("UPDATE Tickets SET
+                                description = '$message'       
+                             WHERE ticketno = '$ticketID'")
+     or die(mysql_error());
+   
 } else {
-	$sql = "INSERT INTO Tickets(description)
-VALUES ('$_POST[description]')" ON DUPLICATE KEY UPDATE number = $_POST['ticket'] ; 
+
+    mysql_query("INSERT INTO Tickets (description)
+                               VALUES ('$message') ")
+    or die(mysql_error()); 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Sees if this works out correctly and actually inserted
 if ($sql == NULL){}
 elseif ($db->query($sql) === TRUE) {
