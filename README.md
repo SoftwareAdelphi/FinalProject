@@ -88,6 +88,8 @@ The top menu bar will show the users what they can access. System Administrators
 
   ![Endpoint Worker Queue](/img/9.png)
 
+When you are into the ticket system you will have the ability to change the description of a ticket. This is done per ticket and update the database accordingly. This is done by knowing your primary ticket ID. There is not way to change this  after you hit the submit button though so be careful when you change a description. This is set to the homepage of the endpoint technician as only they should change the update on the ticket system This also presents a flaw as if anyone knows the ticket ID to change the description they can do so without consequences
+
 ## Testing
 Testing helps you to evaluate how a system will actually perform when it is used by others, so of course, we needed to test our system. Because out system was not in Java so JUnit was not applicable, we conducted our own unit tests. We tested what will happen when logging in with invalid credentials, we made sure each user was able to have the correct access, and unable to access/alter information they were not authorized to. We manually tried breaking our system by running through it multiple times. We tested our code as we went and made sure it was secure and worked as intended before moving on. For example, we focused on logging in as all users first, making sure access was granted properly and making sure basic users could not change any information, before moving on to another part. By testing as we went, we saved ourselves a lot of time. If we kept going and worked on fragments of code from different sections each week, we would have had a lot of testing to do in the end, and all at once.
 
