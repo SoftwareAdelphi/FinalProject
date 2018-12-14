@@ -16,31 +16,40 @@
 
 include ("connection.php");
 $sql = NULL;
+if (isset ($_POST['ticket']))
+{$ticketID = $_POST['ticket'];}
+if (isset($_POST['ticket']))
+{$message =$_POST['description'];}
 
-$ticketID = $_POST['ticket'];
-$message =$_POST['description'];
-
+if (isset ($_POST['ticket'])) {
 $query = "SELECT * FROM Tickets WHERE number = '$ticketID'";
-$sqlsearch = mysql_query($query);
-$resultcount = mysql_numrows($sqlsearch);
+$sqlsearch = mysqli_query($db, $query);
+$resultcount = mysqli_num_rows($sqlsearch);
 
-mysql_query("UPDATE Tickets SET
-                                description = '$message'       
+if ($resultcount == 1) {
+$result = mysqli_query($db, "UPDATE Tickets SET
+                             description = '$message'       
                              WHERE number = '$ticketID'")
      or die(mysql_error());
    
-} else {
+}
+ else {
 
-    mysql_query("INSERT INTO Tickets (description)
-                               VALUES ('$message') ")
-    or die(mysql_error()); 
+   // mysql_query("INSERT INTO Tickets (description)
+     //                          VALUES ('$message') ")
+     die(mysql_error()); 
 
+}
+if ($result === TRUE)
+{ echo "Ticket $ticketID was successfully updated";
+}
 }
 
 
 //Sees if this works out correctly and actually inserted
-if ($sql == NULL){}
-<br><br>
+//if ($sql == NULL){}
+
+?><br><br>
 <input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
 </body>
 

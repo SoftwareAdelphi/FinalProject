@@ -10,7 +10,7 @@
 <ul>
      <li> <a class= "current" href= "#homepage"> Endpoint Integration </a> </li>
      <li> <a href = "add.php"> Add Issues </a> </li>
-     <li> <a href = "update.html"> Update Ticket </a> </li>
+     <li> <a href = "update.php"> Update Ticket </a> </li>
      <li> <a href = "query.php"> Query Issues </a> </li>
      <li> <a href = "Logout.php"> Logout </a> </li>
 </ul>
