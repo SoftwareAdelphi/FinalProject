@@ -21,8 +21,8 @@ if( (!isset($_POST['ticket']) || trim($_POST['ticket']) == "") ||
 {
    echo "Please fill out every field.";
 } else {
-	$sql = "INSERT INTO Tickets(description) WHERE ticket = $_POST['ticket']
-VALUES ('$_POST[description]')"; 
+	$sql = "INSERT INTO Tickets(description)
+VALUES ('$_POST[description]')" ON DUPLICATE KEY UPDATE number = $_POST['ticket'] ; 
 }
 //Sees if this works out correctly and actually inserted
 if ($sql == NULL){}
