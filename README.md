@@ -61,6 +61,31 @@ If you have any questions, please contact kaylapollock@mail.adelphi.edu or our H
   
 Everytime you visit our site, you will be brought to this page, the homepage. From here, you are given the option to add an issue, query issues, or log in if you are a worker. Our contact information is listed in the middle, should you need any assistance, and you will be able to revisit the homepage whenever you want.
 
+  ![Add Issues](/img/2.png)
+
+When you click “Add Issue”, you are brought to this screen. Here, if you wish to report an issue, you must fill out all of the fields. You will see a message saying “New record created successfully” once your issue has been recorded in the database. If you do not see this message, but still see “Please fill out every field” that means that you left out information, and the issue was not reported.
+
+  ![Query Issues](/img/3.png)
+
+To search for the information surrounding a particular ticket, you would need the ticket number. This would be emailed to you by one of the Endpoint Workers or System Administrators once your issue has been looked at and (hopefully) resolved. You must enter a valid number to see the information. When searched, the information will be displayed in this table, of course, unique to the ticket ID since that number is automatically generated to be unique when an issue is created.
+
+  ![Worker Login](/img/4.png)
+
+To login to our system, you must have a valid account. Accounts can not just be created by anyone, which is why creating an account is not an option. Upon clicking “Login” you must input your username and password, which will determine what Queue you see, Helpdesk, Endpoint, or System Administrator.
+
+  ![Invalid Login](/img/5.png)
+
+If you entered your information wrong, or someone was trying gain unauthorized access to the system, the “Invalid Credentials” page will pop up. Don’t worry though! You can go back to the homepage, or go back and re-attempt logging in.
+
+  ![Help Desk Worker Queue](/img/6.png)
+  
+  ![Endpoint Worker Queue](/img/7.png)
+  
+Once logged in, your title will be displayed in the top left corner. Helpdesk users will be able to see all tickets assigned to them. They can change the assignee by selecting who they would like to assign the tickets too, and will be shown a message saying who it was assigned to upon a successful switch. You can still add issues and query issues, and your role is displayed in the top left hand corner. Endpoint and System Administrator queues will look similar, but the description will be able to be able to be changed depending on your permissions.
+
+The top menu bar will show the users what they can access. System Administrators will be able to remove tickets as well, but at the moment that does not work, so that will be fully functioning in our system update… be on the lookout!
+
+
 ## Testing
 Testing helps you to evaluate how a system will actually perform when it is used by others, so of course, we needed to test our system. Because out system was not in Java so JUnit was not applicable, we conducted our own unit tests. We tested what will happen when logging in with invalid credentials, we made sure each user was able to have the correct access, and unable to access/alter information they were not authorized to. We manually tried breaking our system by running through it multiple times. We tested our code as we went and made sure it was secure and worked as intended before moving on. For example, we focused on logging in as all users first, making sure access was granted properly and making sure basic users could not change any information, before moving on to another part. By testing as we went, we saved ourselves a lot of time. If we kept going and worked on fragments of code from different sections each week, we would have had a lot of testing to do in the end, and all at once.
 
