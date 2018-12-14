@@ -4,7 +4,7 @@
 ?>
 <html>
 <head>
-<title>Help Desk Queue</title>
+<title>Help Desk Home</title>
  <link rel="stylesheet" type ="text/css" href="Homepage.css"/>
 <body>
 <?php
@@ -15,7 +15,7 @@
 <!-- Bar to navigate through system -->
 <h1> KPG WORK ORDER SYSTEM </h1>
 <ul>
-     <li> <a class= "current" href= "#homepage"> Help Desk Queue </a> </li>
+     <li> <a class= "current" href= "#homepage"> Help Desk </a> </li>
      <li> <a href = "add.php"> Add Issues </a> </li>
      <li> <a href = "query.php"> Query Issues </a> </li>
      <li> <a href = "Logout.php"> Logout </a> </li>

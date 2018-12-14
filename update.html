@@ -1,6 +1,7 @@
 <html lang = "en">
 <body>
 <div class="A option">
+ <link rel="stylesheet" type ="text/css" href="Homepage.css"/>
 <h2>Update Issue Form</h2>
   <form name="add" action="" method="POST">
   Ticket ID    <input type="text" name="ticket" /><br>
@@ -39,13 +40,6 @@ mysql_query("UPDATE Tickets SET
 
 //Sees if this works out correctly and actually inserted
 if ($sql == NULL){}
-elseif ($db->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $db->error;
-}
-$db->close();
-?>
 <br><br>
 <input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
 </body>

@@ -4,13 +4,14 @@
 ?>
 <html>
 <head>
-<title>Endpoint Home</title>
+<title>System Admin Home</title>
  <link rel="stylesheet" type ="text/css" href="Homepage.css"/>
 <h1> KPG WORK ORDER SYSTEM </h1>
 <ul>
-     <li> <a class= "current" href= "#homepage"> Endpoint Integration </a> </li>
+     <li> <a class= "current" href= "#homepage"> System Administrator </a> </li>
      <li> <a href = "add.php"> Add Issues </a> </li>
-     <li> <a href = "update.html"> Update Ticket </a> </li>
+     <li> <a href = "update.html"> Update Tickets </a> </li>
+     <li> <a href = "remove.php"> Remove Tickets </a> </li>
      <li> <a href = "query.php"> Query Issues </a> </li>
      <li> <a href = "Logout.php"> Logout </a> </li>
 </ul>
@@ -29,7 +30,7 @@
 //open connection
 //include ("connection.php");
 	//prepare info to display
-	$sql = "SELECT number, title, description, email, status, assignee, date FROM Tickets WHERE assignee = 'Endpoint' ORDER BY date";
+	$sql = "SELECT number, title, description, email, status, assignee, date FROM Tickets WHERE assignee = 'SysAdmin' ORDER BY date DESC";
 	$result = mysqli_query($db, $sql);
 
 	//nothing prepared --> error

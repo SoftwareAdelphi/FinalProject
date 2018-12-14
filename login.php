@@ -24,9 +24,9 @@
 		{
 			echo "<script> location.href='HelpdeskQueue.php'; </script>";
 		}
-		else if ($row[0] == 'Sysadmin')
+		else if ($row[0] == 'SysAdmin')
 		{
-			echo "<script> location.href='SysAdminQueue.php'; </script>";
+			echo "<script> location.href='SystemAdminQueue.php'; </script>";
 		}
 		else if ($row[0] == 'Endpoint');
 		{
