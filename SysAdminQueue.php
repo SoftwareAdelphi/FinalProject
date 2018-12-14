@@ -1,12 +1,12 @@
 <html>
 <head>
-<title>System Administrator Queue</title>
-<center><h1> SYS ADMIN QUEUE</h1><br><br>
+<title>Sys Admin Queue</title>
+<center><h1> SYSTEM ADMINISTRATOR QUEUE</h1><br><br>
 <?php
 //open connection
 include ("connection.php");
 
-	$sql = "SELECT number, title, description, status, assignee, date FROM Tickets WHERE assignee = ’SysAdmin' ORDER BY date";
+	$sql = "SELECT number, title, description, email, status, assignee, date FROM Tickets WHERE assignee = 'SysAdmin' ORDER BY date";
 	$result = mysqli_query($db, $sql);
 
 	if (!$result){
@@ -16,7 +16,7 @@ include ("connection.php");
                 $table = $result->fetch_all();
         //var_dump($table);
         echo "<table border = '1'>";
-        echo "<tr><th>Ticket #</th><th>Title</th><th>Description</th><th>Status</th><th>Assignees</th><th>Date Created</th></tr>";
+        echo "<tr><th>Ticket ID</th><th>Title</th><th>Description</th><th>Contact</th><th>Status</th><th>Assignee</th><th>Date Created</th></tr>";
         foreach($table as $row){
                 echo "<tr>";
                 foreach($row as $value){
@@ -29,6 +29,7 @@ include ("connection.php");
 ?>
 
 <input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
+<input type="button" onclick="location.href='update.html';" value="Update Description" /><br>
 
 </body>
 </html>
