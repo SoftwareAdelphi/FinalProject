@@ -9,7 +9,7 @@ December 14th, 2018
 Since all of the members on our team work for Adelphi’s Information Technology, either as help desk workers, system administrators, or former endpoint members, we wanted to recreate the Ticket System we use every day. The Ticket System that we can created can theoretically be implemented in any organization that wishes to monitor and respond to user issues that requires the assistance of others. In particular, the KPG Ticket System that we developed focused on responding to and fixing technology related issues. We decided to work with databases, html, and php, to create a user friendly website that will be able to resolve any issues as they arise. 
 
 
-To find all of our code, visit: GitHub.com/k-pollock/Software-Final-Project
+To find all of our code, visit: https://github.com/k-pollock/Software-Final-Project
 
 
 ## Requirements
