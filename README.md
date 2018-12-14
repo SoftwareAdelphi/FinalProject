@@ -24,6 +24,11 @@ Our design process did not stop with models though; we also followed a software 
 
 Along with the visuals on the next page, we also decided that we would need two databases, one to store login credentials, and one to store the ticket information.
 
+![Use Case Diagram](/img/fig2.png)
+
+![Object Diagram](/img/fig3.png)
+
+![Visualization](/img/fig4.png)
 
 ## Implementation
 There are no hardware restrictions related to our system because everything was done on the compsci.adelphi.edu VM. When we were implementing and testing the project, we tested it directly on the server itself, as we wanted to make sure that it updated correctly like it would in a real life scenario. Our system, as you will see in the user manual, can be accessed by going to http://compsci.adelphi.edu/~proggadeb/Software-Final-Project/home.php  so all a user needs is access to the internet. 
@@ -51,6 +56,10 @@ Thank you for using the KPG Ticket System! Here, you will find step-by-step inst
 To access the KPQ Ticket System, please visit: http://compsci.adelphi.edu/~proggadeb/Software-Final-Project/home.php
 
 If you have any questions, please contact kaylapollock@mail.adelphi.edu or our Help Desk
+
+  ![Home](/img/1.png)
+  
+Everytime you visit our site, you will be brought to this page, the homepage. From here, you are given the option to add an issue, query issues, or log in if you are a worker. Our contact information is listed in the middle, should you need any assistance, and you will be able to revisit the homepage whenever you want.
 
 ## Testing
 Testing helps you to evaluate how a system will actually perform when it is used by others, so of course, we needed to test our system. Because out system was not in Java so JUnit was not applicable, we conducted our own unit tests. We tested what will happen when logging in with invalid credentials, we made sure each user was able to have the correct access, and unable to access/alter information they were not authorized to. We manually tried breaking our system by running through it multiple times. We tested our code as we went and made sure it was secure and worked as intended before moving on. For example, we focused on logging in as all users first, making sure access was granted properly and making sure basic users could not change any information, before moving on to another part. By testing as we went, we saved ourselves a lot of time. If we kept going and worked on fragments of code from different sections each week, we would have had a lot of testing to do in the end, and all at once.
