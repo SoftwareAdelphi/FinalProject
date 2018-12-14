@@ -61,11 +61,11 @@ If you have any questions, please contact kaylapollock@mail.adelphi.edu or our H
   
 Everytime you visit our site, you will be brought to this page, the homepage. From here, you are given the option to add an issue, query issues, or log in if you are a worker. Our contact information is listed in the middle, should you need any assistance, and you will be able to revisit the homepage whenever you want.
 
-  ![Add Issues](/img/2.png)
+  ![Add Issues](img/2.png)
 
 When you click “Add Issue”, you are brought to this screen. Here, if you wish to report an issue, you must fill out all of the fields. You will see a message saying “New record created successfully” once your issue has been recorded in the database. If you do not see this message, but still see “Please fill out every field” that means that you left out information, and the issue was not reported.
 
-  ![Query Issues](/img/3.png)
+  ![Query Issues](img/3.png)
 
 To search for the information surrounding a particular ticket, you would need the ticket number. This would be emailed to you by one of the Endpoint Workers or System Administrators once your issue has been looked at and (hopefully) resolved. You must enter a valid number to see the information. When searched, the information will be displayed in this table, of course, unique to the ticket ID since that number is automatically generated to be unique when an issue is created.
 
