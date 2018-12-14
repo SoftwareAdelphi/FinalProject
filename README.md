@@ -53,7 +53,7 @@ Sprint 3 we focused on everything that we had left, and this sprint led up to ou
 ## User Manual
 Thank you for using the KPG Ticket System! Here, you will find step-by-step instructions on how to use all of the features this system has to offer. If you wish to implement this code on your own system, we recommend keeping it all in one spot, like on a terminal so it is easy to access if needed, and easy to maintain. 
 
-To access the KPQ Ticket System, please visit: http://compsci.adelphi.edu/~proggadeb/Software-Final-Project/home.php
+To access the KPG Ticket System, please visit: http://compsci.adelphi.edu/~proggadeb/Software-Final-Project/home.php
 
 If you have any questions, please contact kaylapollock@mail.adelphi.edu or our Help Desk
 
