@@ -79,12 +79,14 @@ If you entered your information wrong, or someone was trying gain unauthorized a
 
   ![Help Desk Worker Queue](/img/6.png)
   
-  ![Endpoint Worker Queue](/img/7.png)
-  
 Once logged in, your title will be displayed in the top left corner. Helpdesk users will be able to see all tickets assigned to them. They can change the assignee by selecting who they would like to assign the tickets too, and will be shown a message saying who it was assigned to upon a successful switch. You can still add issues and query issues, and your role is displayed in the top left hand corner. Endpoint and System Administrator queues will look similar, but the description will be able to be able to be changed depending on your permissions.
+
+  ![Endpoint Worker Queue](/img/7.png)
+  ![Endpoint Worker Queue](/img/8.png)
 
 The top menu bar will show the users what they can access. System Administrators will be able to remove tickets as well, but at the moment that does not work, so that will be fully functioning in our system update… be on the lookout!
 
+  ![Endpoint Worker Queue](/img/9.png)
 
 ## Testing
 Testing helps you to evaluate how a system will actually perform when it is used by others, so of course, we needed to test our system. Because out system was not in Java so JUnit was not applicable, we conducted our own unit tests. We tested what will happen when logging in with invalid credentials, we made sure each user was able to have the correct access, and unable to access/alter information they were not authorized to. We manually tried breaking our system by running through it multiple times. We tested our code as we went and made sure it was secure and worked as intended before moving on. For example, we focused on logging in as all users first, making sure access was granted properly and making sure basic users could not change any information, before moving on to another part. By testing as we went, we saved ourselves a lot of time. If we kept going and worked on fragments of code from different sections each week, we would have had a lot of testing to do in the end, and all at once.
