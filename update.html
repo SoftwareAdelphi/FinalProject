@@ -13,20 +13,19 @@
 
 <?php
 
+include ("connection.php");
+$sql = NULL;
 
 $ticketID = $_POST['ticket'];
 $message =$_POST['description'];
 
-include ("connection.php");
-$sql = NULL;
-
-$query = "SELECT * FROM Tickets WHERE `ticketno` = '$ticketID'";
+$query = "SELECT * FROM Tickets WHERE number = '$ticketID'";
 $sqlsearch = mysql_query($query);
 $resultcount = mysql_numrows($sqlsearch);
 
 mysql_query("UPDATE Tickets SET
                                 description = '$message'       
-                             WHERE ticketno = '$ticketID'")
+                             WHERE number = '$ticketID'")
      or die(mysql_error());
    
 } else {
