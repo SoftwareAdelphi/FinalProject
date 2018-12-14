@@ -6,7 +6,7 @@
 //open connection
 include ("connection.php");
 
-	$sql = "SELECT number, title, description, status, assignee, date FROM Tickets WHERE assignee = 'Helpdesk' ORDER BY date";
+	$sql = "SELECT number, title, description, status, assignee, date FROM Tickets WHERE assignee = 'Helpdesk' ORDER BY date DESC";
 	$result = mysqli_query($db, $sql);
 
 	if (!$result){
@@ -19,19 +19,24 @@ include ("connection.php");
         echo "<tr><th>Ticket #</th><th>Title</th><th>Description</th><th>Status</th><th>Assignees</th><th>Date Created</th></tr>";
         foreach($table as $row){
                 echo "<tr>";
-                foreach($row as $value){
-                        echo "<td>$value</td>";
-                }
-		?>
+                foreach($row as $value){ 
+		if ($value == 'Helpdesk') { ?>
+		<td>
 		<form action = "" method = "post">
-		<input type = "radio" name = assignee" value "SysAdmin"> Sys Admin
-		<input type = "radio" name = assignee" value "SysAdmin"> Endpoint
+                <input type = "radio" name = "a" value = "SysAdmin"> Sys Admin
+                <input type = "radio" name = "a" value = "Endpoint"> Endpoint
+		<input type = "submit" name = "save" value = "Save">
 		</form>
-		<?php
+		</td>
+		<?php }
+		else {echo "<td>$value</td>";}
+		}
+		//include 'radioValue.php';		
                 echo "</tr>";
         }
+	//include 'radioValue.php';
 	}
-
+	include 'radioValue.php';
 ?>
 
 <input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
