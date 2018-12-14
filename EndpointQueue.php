@@ -29,7 +29,7 @@
 //open connection
 //include ("connection.php");
 	//prepare info to display
-	$sql = "SELECT number, title, description, email, status, assignee, date FROM Tickets WHERE assignee = 'Endpoint' ORDER BY date";
+	$sql = "SELECT number, title, description, email, status, assignee, date FROM Tickets WHERE assignee = 'Endpoint' ORDER BY date DESC";
 	$result = mysqli_query($db, $sql);
 
 	//nothing prepared --> error
