@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>Error</title>
+<h1>Invalid Credentials</h1>
+</head>
+
+<body>
+Sorry, we don't recognize you!
+<br><br>
+<input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />  
+<input type="button" onclick="location.href='login.html';" value="Try Again" />  
+
+</body>
+</html>
