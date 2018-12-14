@@ -28,8 +28,7 @@ include ("connection.php");
 
 ?>
 
-<input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
-<input type="button" onclick="location.href='update.html';" value="Update Description" />
+<input type="button" onclick="location.href='home.php';" value="Log Out" />
 
 </body>
 </html>
