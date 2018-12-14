@@ -1,5 +1,7 @@
 <html lang = "en">
 <body>
+<title>Ticket Search</title>
+	
 <div class="Q option"> <!--Helpdesk doesnt' have this function. SysAdmins and endpoint can though-->
                   <h2>Enter the ID of the ticket you are looking for</h2>
 
