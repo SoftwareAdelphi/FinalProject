@@ -2,7 +2,7 @@
 <body>
 <title>Ticket Search</title>
 	
-<div class="Q option"> <!--Helpdesk doesnt' have this function. SysAdmins and endpoint can though-->
+<div class="Q option">
                   <h2>Enter the ID of the ticket you are looking for</h2>
 
                     <form name="query" action="" method="POST">
