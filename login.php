@@ -38,6 +38,8 @@
         }
         else
         {
-                echo "Error: " . $sqlLogin . "<br>" . $db->error;
-        }
+                echo "<script> location.href = 'invalidLogin.html'; </script>";
+	exit;
+       }
+
 ?>
