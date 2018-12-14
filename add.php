@@ -1,6 +1,7 @@
 <html lang = "en">
 <body>
 <div class="A option">
+<title>Add Issue </title>
 <h2>New Issue Form</h2>
   <form name="add" action="" method="POST">
   First Name:    <input type="text" name="fnameadd" /><br>
