@@ -1,4 +1,7 @@
 <?php
+
+//Use this to connect to Progga's database so we do not need to type this in all files
+
         $host = 'localhost';
         $user = 'proggadeb';
         $pw = '';
