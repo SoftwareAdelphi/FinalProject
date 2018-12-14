@@ -18,24 +18,30 @@
 
 <?php
 	include ("connection.php");
+	//ticketid is what user entered
 	if (isset($_REQUEST['ticketid']))
+	//if valid then id is set to the input
 	{	$id = $_REQUEST['ticketid'];	}
 	if (isset($_REQUEST['ticketid']))
 	{
+		//start retrieving info from database
 		$sql = "SELECT * FROM tickets WHERE number = $id";
       $result = $db->query($sql);
 
+      //if result so the query returns null	
       if (!$result){
         echo "Oops! " . $db->error;
       }
+	//if it does not, then there is info and it is read to be displayed
       else{
                 $table = $result->fetch_all();
-        //var_dump($table);
+        //set up and display table
         echo "<table border = '1'>";
         echo "<tr><th>Title</th><th>Status</th><th>Ticket #</th><th>Date</th><th>Description</th><th>Last Name</th><th>First Name</th><th>Phone Number</th><th>Email</th><th>Username</th><th>Assignees</th></tr>";
         foreach($table as $row){
                 echo "<tr>";
-                foreach($row as $value){
+		//iterate through to display
+		foreach($row as $value){
                         echo "<td>$value</td>";
                 }
                 echo "</tr>";
