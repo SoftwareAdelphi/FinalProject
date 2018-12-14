@@ -1,12 +1,39 @@
+<?php
+ include ('session.php');       // login session
+ include ("connection.php");     //connects to db
+?>
 <html>
 <head>
 <title>Help Desk Queue</title>
-<center><h1> HELP DESK QUEUE</h1><br>
+ <link rel="stylesheet" type ="text/css" href="Homepage.css"/>
+<body>
 <?php
-//open connection
-include ("connection.php");
+        //Displays the name of the user currently logged in
+    //     $name = mysqli_query($db, "SELECT fName FROM Login WHERE username = '$login_session';");
+  //       $who = mysqli_fetch_row($name);
+//         echo $who[0];?>
+<!-- Bar to navigate through system -->
+<h1> KPG WORK ORDER SYSTEM </h1>
+<ul>
+     <li> <a class= "current" href= "#homepage"> Help Desk Queue </a> </li>
+     <li> <a href = "add.php"> Add Issues </a> </li>
+     <li> <a href = "query.php"> Query Issues </a> </li>
+     <li> <a href = "Logout.php"> Logout </a> </li>
+</ul>
 
-	$sql = "SELECT number, title, description, status, assignee, date FROM Tickets WHERE assignee = 'Helpdesk' ORDER BY date DESC";
+<br><br><center><table class="IncidentsTable">
+  <tr class="TableHeader">
+    <th id="headerItem"><center>Ticket ID</center></th>
+    <th id="headerItem"><center>Title</center></th>
+    <th id="headerItem"><center>Description</center></th>
+    <th id="headerItem"><center>Email</center></th>
+    <th id="headerItem"><center>Status</center></th>
+    <th id="headerItemAssignees"><center>Assignees</center></th>
+    <th id="headerItem"><center>Date Created</center></th>
+  </tr>
+
+<?php
+	$sql = "SELECT number, title, description, email, status, assignee, date FROM Tickets WHERE assignee = 'Helpdesk' AND status = 'open' ORDER BY date DESC";
 	$result = mysqli_query($db, $sql);
 
 	if (!$result){
@@ -15,11 +42,16 @@ include ("connection.php");
       else{
                 $table = $result->fetch_all();
         //var_dump($table);
-        echo "<table border = '1'>";
-        echo "<tr><th>Ticket #</th><th>Title</th><th>Description</th><th>Status</th><th>Assignees</th><th>Date Created</th></tr>";
-        foreach($table as $row){
-                echo "<tr>";
-                foreach($row as $value){ 
+       // echo "<table border = '1'>";
+       // echo "<tr><th>Ticket #</th><th>Title</th><th>Description</th><th>Status</th><th>Assignees</th><th>Date Created</th></tr>";
+	{
+                foreach($table as $row) {
+                ?>
+                <tr class = "TableRow">
+                <?php
+
+                foreach($row as $value){
+		 
 		if ($value == 'Helpdesk') { ?>
 		<td>
 		<form action = "" method = "post">
@@ -37,8 +69,9 @@ include ("connection.php");
 	//include 'radioValue.php';
 	}
 	include 'radioValue.php';
+}
 ?>
-
+</table>
 <input type="button" onclick="location.href='home.php';" value="Go Back to Menu" />
 
 </body>
