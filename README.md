@@ -1,4 +1,4 @@
-# SoftwareFinalProject
+# Software Final Project
 
 Project: Ticket System
 Gerard Boniello, Kayla Pollock & Progga Deb
